@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        #todo-form {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        #todo-form input {
+            flex-grow: 1;
+            margin-right: 10px;
+            padding: 5px;
+        }
+        #todo-form button {
+            padding: 5px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #todo-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .todo-item {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .todo-item button {
+            padding: 5px 10px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .completed {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todo App</h1>
+    <form id="todo-form">
+        <input type="text" id="title" placeholder="Title" required>
+        <input type="text" id="description" placeholder="Description">
+        <button type="submit">Add Todo</button>
+    </form>
+    <ul id="todo-list"></ul>
+</body>
+</html>
